@@ -22,8 +22,13 @@ RUN apt-get update && apt-get -y install windscribe-cli expect
 RUN rm /etc/tinyproxy/*
 COPY ./conf/tinyproxy/tinyproxy.conf /etc/tinyproxy
 
-#Debug
-RUN apt-get -y install nano less iputils-ping
+#Debug utils
+#RUN apt-get -y install nano less iputils-ping
+
+# Add Tini
+ENV TINI_VERSION v0.18.0
+ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
+RUN chmod +x /tini
 
 COPY ./docker-entrypoint.sh /
 ENTRYPOINT ["/tini", "--", "/docker-entrypoint.sh"]
