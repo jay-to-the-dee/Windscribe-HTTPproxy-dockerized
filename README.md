@@ -14,4 +14,4 @@ LOCAL_PORT=8888
 
 WINDSCRIBE_COUNTRY is completely optional and LOCAL_PORT will need to be changed per Docker instance to resolve port conflicts.
 
-Start docker with `localproxy.sh` script for the correct parameters to be passed to Docker.
+Start docker with [`localproxy.sh`](https://github.com/jay-to-the-dee/Windscribe-HTTPproxy-dockerized/blob/master/localproxy.sh) script for the correct parameters to be passed to Docker.
