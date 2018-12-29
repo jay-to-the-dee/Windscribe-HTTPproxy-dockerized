@@ -38,4 +38,5 @@ windscribe connect ${WINDSCRIBE_COUNTRY}
 # Start tinyproxy HTTP proxy service
 /etc/init.d/tinyproxy start
 
-bash
+# Wait for ever else docker dies :(
+sleep infinity

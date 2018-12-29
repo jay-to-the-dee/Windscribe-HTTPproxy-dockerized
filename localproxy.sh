@@ -2,11 +2,11 @@
 
 source ./vars.sh
 
-IMAGE_NAME="windscribe-tinyproxy"
+IMAGE_NAME="dilks/windscribe-httpproxy"
 DNS1="1.1.1.1"
 DNS2="1.0.0.1"
 
-docker run --rm -t -d \
+docker run --rm -d \
 --cap-add=NET_ADMIN \
 --env WINDSCRIBE_COUNTRY="$WINDSCRIBE_COUNTRY" \
 --env WINDSCRIBE_USERNAME \
