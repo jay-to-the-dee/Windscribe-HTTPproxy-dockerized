@@ -8,9 +8,10 @@ DNS2="1.0.0.1"
 
 docker run --rm -d \
 --cap-add=NET_ADMIN \
---env WINDSCRIBE_COUNTRY="$WINDSCRIBE_COUNTRY" \
 --env WINDSCRIBE_USERNAME \
 --env WINDSCRIBE_PASSWORD \
+--env HOST_PORT="$HOST_PORT" \
+--env WINDSCRIBE_COUNTRY="$WINDSCRIBE_COUNTRY" \
 -p $HOST_PORT:8888 \
 --dns "${DNS1}" \
 --dns "${DNS2}" \
