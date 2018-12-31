@@ -22,6 +22,12 @@ services:
         proxy-network:
           aliases:
             - windscribe-httpproxy
+# In development: Swarm config options
+      deploy:
+        resources:
+          limits:
+            cpus: '0.2'
+            memory: 200M
         
 networks:
     proxy-network:
