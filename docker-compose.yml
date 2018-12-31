@@ -7,10 +7,10 @@ services:
       cap_add:
         - NET_ADMIN
       environment:
-        - WINDSCRIBE_COUNTRY=${WINDSCRIBE_COUNTRY}
         - WINDSCRIBE_USERNAME=${WINDSCRIBE_USERNAME}
         - WINDSCRIBE_PASSWORD=${WINDSCRIBE_PASSWORD}
         - HOST_PORT=${HOST_PORT:-8888} #Pass for echo purposes
+        - WINDSCRIBE_COUNTRY=${WINDSCRIBE_COUNTRY}
       dns:
         - 1.1.1.1
         - 1.0.0.1
