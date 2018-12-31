@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ./vars.sh
+export $(grep -v '^#' .env | xargs -d '\n')
 
 IMAGE_NAME="dilks/windscribe-httpproxy"
 DNS1="1.1.1.1"
@@ -11,7 +11,7 @@ docker run --rm -d \
 --env WINDSCRIBE_COUNTRY="$WINDSCRIBE_COUNTRY" \
 --env WINDSCRIBE_USERNAME \
 --env WINDSCRIBE_PASSWORD \
--p $LOCAL_PORT:8888 \
+-p $HOST_PORT:8888 \
 --dns "${DNS1}" \
 --dns "${DNS2}" \
 "${IMAGE_NAME}"
