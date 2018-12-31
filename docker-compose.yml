@@ -1,0 +1,30 @@
+version: '3.7'
+services:
+
+    windscribe-httpproxy:
+      image: dilks/windscribe-httpproxy
+      restart: always
+      cap_add:
+        - NET_ADMIN
+      environment:
+        - WINDSCRIBE_COUNTRY=${WINDSCRIBE_COUNTRY}
+        - WINDSCRIBE_USERNAME=${WINDSCRIBE_USERNAME}
+        - WINDSCRIBE_PASSWORD=${WINDSCRIBE_PASSWORD}
+        - HOST_PORT=${HOST_PORT:-8888} #Pass for echo purposes
+      dns:
+        - 1.1.1.1
+        - 1.0.0.1
+      ports:
+        - "${HOST_PORT:-8888}:8888"
+      tmpfs:
+        - /etc/windscribe,tmpfs-mode=700
+      networks:
+        proxy-network:
+          aliases:
+            - windscribe-httpproxy
+        
+networks:
+    proxy-network:
+        driver: bridge
+        #enable_ipv6: false
+        

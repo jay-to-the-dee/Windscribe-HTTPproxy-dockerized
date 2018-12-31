@@ -1,6 +1,5 @@
 FROM ubuntu:18.04
 ENV DEBIAN_FRONTEND noninteractive
-EXPOSE 8888
 
 RUN apt-get update
 RUN apt-get -y install apt-transport-https ca-certificates tinyproxy add-apt-key debconf-utils iptables # ifupdown2 resolvconf
@@ -31,4 +30,5 @@ ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
 RUN chmod +x /tini
 
 COPY ./docker-entrypoint.sh /
+EXPOSE 8888
 ENTRYPOINT ["/tini", "--", "/docker-entrypoint.sh"]
