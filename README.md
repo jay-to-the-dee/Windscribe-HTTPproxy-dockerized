@@ -1,14 +1,14 @@
 # Windscribe-HTTPproxy-dockerized
 Let's you use any Windscribe server over a HTTP proxy. Uses Docker so multiple HTTP proxies at different locations can be created on the same machine simultaneously!
 
-Note you need to copy `env.sample` to `.env` and fill it with your windscribe account details for this to work. It should consist of the following:
+Note you need to copy [`env.sample`](https://github.com/jay-to-the-dee/Windscribe-HTTPproxy-dockerized/blob/master/env.sample) to `.env` and fill it with your windscribe account details for this to work. It should consist of the following:
 
 ```
 WINDSCRIBE_USERNAME=        # Insert Windscribe account username here
 WINDSCRIBE_PASSWORD=        # Corresponding account password
 
 #Optional
-LOCAL_PORT=                 # Local port number to run HTTP proxy on (8888 is default)
+LOCAL_PORT=                 # Local port number to run HTTP proxy on (8888 is default with docker-compose)
 WINDSCRIBE_COUNTRY=         # Change VPN server country (Current location as determined by Windscribe is default)
 ```
 
