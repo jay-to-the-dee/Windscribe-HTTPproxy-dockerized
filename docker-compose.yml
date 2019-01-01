@@ -26,5 +26,5 @@ services:
 networks:
     proxy-network:
         driver: bridge
-        #enable_ipv6: false
+#        enable_ipv6: false
         
