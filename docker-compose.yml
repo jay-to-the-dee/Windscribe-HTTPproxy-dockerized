@@ -17,7 +17,7 @@ services:
       ports:
         - "${HOST_PORT:-8888}:8888"
       tmpfs:
-        - /etc/windscribe,tmpfs-mode=700
+        - /etc/windscribe:exec,mode=700
       networks:
         proxy-network:
           aliases:
@@ -32,5 +32,5 @@ services:
 networks:
     proxy-network:
         driver: bridge
-        #enable_ipv6: false
+#        enable_ipv6: false
         

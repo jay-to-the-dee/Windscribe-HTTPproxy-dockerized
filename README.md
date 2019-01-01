@@ -16,4 +16,4 @@ WINDSCRIBE_COUNTRY is completely optional and LOCAL_PORT will need to be changed
 
 You can start docker with [`localproxy.sh`](https://github.com/jay-to-the-dee/Windscribe-HTTPproxy-dockerized/blob/master/localproxy.sh) script for the correct parameters to be passed to Docker.
 
-Or if you have Docker Compose installed you can just do `docker-compose up -d` (this is the preferred way).
+Or if you have Docker Compose installed you can just do `docker-compose up -d` with the [`docker-compose.yml`](https://github.com/jay-to-the-dee/Windscribe-HTTPproxy-dockerized/blob/master/docker-compose.yml) file (this is the preferred way).
