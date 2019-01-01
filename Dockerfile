@@ -2,8 +2,8 @@ FROM ubuntu:18.04
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && \
-apt-get -y install --no-install-recommends apt-transport-https ca-certificates tinyproxy add-apt-key debconf-utils iptables expect
-RUN echo "resolvconf resolvconf/linkify-resolvconf boolean false" | debconf-set-selections
+apt-get -y install --no-install-recommends apt-transport-https ca-certificates tinyproxy add-apt-key debconf-utils iptables expect #ifupdown
+RUN echo "resolvconf resolvconf/linkify-resolvconf boolean false" | debconf-set-selections #This is a Docker specific thing because it enforces it's own /etc/resolv.conf
 
 #Windscribe instructions
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-key FDC247B7

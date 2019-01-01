@@ -41,5 +41,4 @@ windscribe connect ${WINDSCRIBE_COUNTRY}
 # Start tinyproxy HTTP proxy service
 echo "Starting HTTP proxy on host port ${HOST_PORT} (HOST_PORT)..."
 # Wait for tinyproxy daemon (hopefully forever) else docker dies :(
-/usr/sbin/tinyproxy -d
-
+exec /usr/sbin/tinyproxy -d
