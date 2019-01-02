@@ -15,14 +15,9 @@ apt-get -y install --no-install-recommends windscribe-cli
 RUN rm /etc/tinyproxy/*
 COPY ./conf/tinyproxy/tinyproxy.conf /etc/tinyproxy
 
-# Add Tini
-ENV TINI_VERSION v0.18.0
-ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
-RUN chmod +x /tini
-
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 COPY ./docker-entrypoint.sh /
 EXPOSE 8888
-ENTRYPOINT ["/tini", "--", "/docker-entrypoint.sh"]
+ENTRYPOINT ["/docker-entrypoint.sh"]

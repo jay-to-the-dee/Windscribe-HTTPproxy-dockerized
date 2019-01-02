@@ -6,6 +6,7 @@ services:
       restart: always
       cap_add:
         - NET_ADMIN
+      init: true
       environment:
         - WINDSCRIBE_USERNAME=${WINDSCRIBE_USERNAME}
         - WINDSCRIBE_PASSWORD=${WINDSCRIBE_PASSWORD}
@@ -18,6 +19,11 @@ services:
         - "${HOST_PORT:-8888}:8888"
       tmpfs:
         - /etc/windscribe:exec,mode=700
+#      volumes: #docker-compose still doesn't support this properly yet :(
+#      ^^ So carry on using tmpfs: for now ^^
+#      - type: tmpfs
+#        target: /etc/windscribe
+#        mode: exec
       networks:
         proxy-network:
           aliases:

@@ -7,6 +7,7 @@ DNS1="1.1.1.1"
 DNS2="1.0.0.1"
 
 docker run --rm -d \
+--init \
 --cap-add=NET_ADMIN \
 --env WINDSCRIBE_USERNAME \
 --env WINDSCRIBE_PASSWORD \
