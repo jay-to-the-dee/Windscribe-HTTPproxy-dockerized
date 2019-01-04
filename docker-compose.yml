@@ -18,12 +18,12 @@ services:
       ports:
         - "${HOST_PORT:-8888}:8888"
       tmpfs:
-        - /etc/windscribe:exec,mode=700
+        - /etc/windscribe:exec,mode=700,size=1m
 #      volumes: #docker-compose still doesn't support this properly yet :(
 #      ^^ So carry on using tmpfs: for now ^^
 #      - type: tmpfs
 #        target: /etc/windscribe
-#        mode: exec
+#        mode: exec,mode=700,size=1m
       networks:
         proxy-network:
           aliases:
